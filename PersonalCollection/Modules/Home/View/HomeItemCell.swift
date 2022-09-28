@@ -13,22 +13,22 @@ class HomeItemCell: UICollectionViewCell {
     // MARK: - PROPERTIES -
     var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .white
         return view
     }()
     var imageView: UIImageView = {
-       let view = UIImageView()
+        let view = UIImageView()
         view.clipsToBounds = true
         view.image = UIImage(named: "backgroundImage")
-        view.contentMode = .scaleAspectFill
-       return view
+        view.contentMode = .scaleAspectFit
+        return view
     }()
     
     var crossButton: UIImageView = {
         let view = UIImageView()
          view.clipsToBounds = true
          view.image = UIImage(systemName: "multiply")
-         view.contentMode = .scaleAspectFill
+         view.contentMode = .scaleAspectFit
         view.tintColor = .black
         return view
      }()

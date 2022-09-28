@@ -25,7 +25,8 @@ class MediaPicker {
         config.shouldSaveNewPicturesToAlbum = false
         config.library.preSelectItemOnMultipleSelection = false
         config.library.defaultMultipleSelection = true
-        
+        config.showsPhotoFilters = false
+        config.onlySquareImagesFromCamera = false
         
         picker = YPImagePicker(configuration: config)
         

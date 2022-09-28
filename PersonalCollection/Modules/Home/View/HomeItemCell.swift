@@ -29,6 +29,7 @@ class HomeItemCell: UICollectionViewCell {
          view.clipsToBounds = true
          view.image = UIImage(systemName: "multiply")
          view.contentMode = .scaleAspectFill
+        view.tintColor = .black
         return view
      }()
     

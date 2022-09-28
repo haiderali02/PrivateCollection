@@ -21,6 +21,8 @@
 		1865955B28E44DD500648C54 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865955A28E44DD500648C54 /* LoadingButton.swift */; };
 		188749BA28E4AB3400624F91 /* HomeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188749B928E4AB3400624F91 /* HomeItemCell.swift */; };
 		188749BC28E4C32200624F91 /* HomeItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188749BB28E4C32200624F91 /* HomeItemProtocol.swift */; };
+		188749BF28E4C98300624F91 /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188749BE28E4C98300624F91 /* HomeViewControllerExtension.swift */; };
+		188749C128E4CA5E00624F91 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188749C028E4CA5E00624F91 /* MediaPicker.swift */; };
 		2A1DD4DF1F389C2200712195 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */; };
 		2A1DD4E11F389E2100712195 /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */; };
 		2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E77361F384BFC006C84D4 /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		1865955A28E44DD500648C54 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		188749B928E4AB3400624F91 /* HomeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCell.swift; sourceTree = "<group>"; };
 		188749BB28E4C32200624F91 /* HomeItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemProtocol.swift; sourceTree = "<group>"; };
+		188749BE28E4C98300624F91 /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
+		188749C028E4CA5E00624F91 /* MediaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPicker.swift; sourceTree = "<group>"; };
 		2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
 		2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHandler.swift; sourceTree = "<group>"; };
 		2A1E77331F384BFC006C84D4 /* PersonalCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				1865955128E43F1400648C54 /* HomeViewController.swift */,
+				188749BE28E4C98300624F91 /* HomeViewControllerExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				2A9222811F38797600A648E6 /* ConfigurationManager.swift */,
 				2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */,
 				2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */,
+				188749C028E4CA5E00624F91 /* MediaPicker.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -513,29 +519,31 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCollection/Pods-PersonalCollection-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PersonalCollection/Pods-PersonalCollection-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQDropDownTextFieldSwift/IQDropDownTextFieldSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQDropDownTextFieldSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCollection/Pods-PersonalCollection-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PersonalCollection/Pods-PersonalCollection-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C3D9E88C2945581ED437A2C /* [CP] Check Pods Manifest.lock */ = {
@@ -609,11 +617,13 @@
 				1865954628E43DE900648C54 /* LoginViewController.swift in Sources */,
 				1865955828E44A7900648C54 /* UITextFieldExtension.swift in Sources */,
 				188749BC28E4C32200624F91 /* HomeItemProtocol.swift in Sources */,
+				188749BF28E4C98300624F91 /* HomeViewControllerExtension.swift in Sources */,
 				2A9222821F38797600A648E6 /* ConfigurationManager.swift in Sources */,
 				2ABEE6D61F3886D700531205 /* RootRouter.swift in Sources */,
 				1865955028E43EEB00648C54 /* HomeView.swift in Sources */,
 				1865953A28E43A8B00648C54 /* Constant.swift in Sources */,
 				C90395241FC622D2006F1DC0 /* main.swift in Sources */,
+				188749C128E4CA5E00624F91 /* MediaPicker.swift in Sources */,
 				2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */,
 				553FC23C214047CB001D9362 /* R.generated.swift in Sources */,
 				1865955528E449EB00648C54 /* CustomTextField.swift in Sources */,

@@ -13,6 +13,7 @@ target 'PersonalCollection' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'IQDropDownTextFieldSwift'
   pod 'IQKeyboardManagerSwift'
+  pod 'YPImagePicker'
   
   # Maping
   pod 'ObjectMapper', '~> 3.5'

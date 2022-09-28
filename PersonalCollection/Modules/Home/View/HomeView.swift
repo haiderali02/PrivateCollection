@@ -23,6 +23,16 @@ class HomeView: UIView {
         return layout
     }()
     
+    var noImageFoundLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .lightGray
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 14)
+        label.text = "No Images Found \n You can add images by clicking + button from top right corner"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: flowLayout)
         super.init(frame: frame)
@@ -39,6 +49,7 @@ class HomeView: UIView {
     
     func addViews() {
         addSubview(collectionView)
+        addSubview(noImageFoundLabel)
     }
     
     func configureViews() {
@@ -52,6 +63,10 @@ class HomeView: UIView {
     func setUpConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)
+        }
+        noImageFoundLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(safeAreaInsets).inset(20)
+            make.center.equalToSuperview()
         }
     }
 }

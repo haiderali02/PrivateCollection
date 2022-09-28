@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     var images: [UIImage] = [] {
         didSet {
             saveImages()
+            homeView.noImageFoundLabel.isHidden = images.count > 0
             homeView.collectionView.reloadData()
         }
     }
@@ -47,35 +48,7 @@ class HomeViewController: UIViewController {
         loadSavedImages()
     }
     
-    func loadSavedImages() {
-        if let imagesData = DBManager.shared.fetchImagesData() {
-            
-            imagesData.forEach { data in
-                if let image = UIImage(data: data) {
-                    self.images.append(image)
-                    
-                }
-            }
-            
-        }
-    }
     
-    func saveImages() {
-        
-        var imagesData: [Data] = []
-        
-        if images.count > 0 {
-            
-            images.forEach { image in
-                if let data = image.jpegData(compressionQuality: 0.5) {
-                    imagesData.append(data)
-                }
-            }
-            
-        }
-        
-        DBManager.shared.addImages(imagesData: imagesData)
-    }
     
     func configureNavigationBar() {
         // chevron.left

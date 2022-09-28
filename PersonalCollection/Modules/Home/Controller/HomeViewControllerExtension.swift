@@ -12,7 +12,7 @@ import UIKit
 extension HomeViewController: CollectionViewDelegateAndDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return self.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -30,6 +30,23 @@ extension HomeViewController: CollectionViewDelegateAndDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return homeView.collectionView.frame.size
     }
+    
+    // Infinit Scrolling will start work when images count > 2
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageFloat = (scrollView.contentOffset.x / scrollView.frame.size.width)
+        let pageInt = Int(round(pageFloat))
+        if images.count > 2 {
+            switch pageInt {
+            case 0:
+                 self.homeView.collectionView.scrollToItem(at: [0, 2], at: .left, animated: false)
+            case images.count - 1:
+                self.homeView.collectionView.scrollToItem(at: [0, 1], at: .left, animated: false)
+            default:
+                break
+            }
+        }
+    }
 }
 
 extension HomeViewController {
@@ -46,6 +63,36 @@ extension HomeViewController {
         confirmationAlert.addAction(cancelAction)
         confirmationAlert.addAction(confirmAction)
         self.present(confirmationAlert, animated: true)
+    }
+    
+    func loadSavedImages() {
+        if let imagesData = DBManager.shared.fetchImagesData() {
+            
+            imagesData.forEach { data in
+                if let image = UIImage(data: data) {
+                    self.images.append(image)
+                    
+                }
+            }
+            
+        }
+    }
+    
+    func saveImages() {
+        
+        var imagesData: [Data] = []
+        
+        if images.count > 0 {
+            
+            images.forEach { image in
+                if let data = image.jpegData(compressionQuality: 0.5) {
+                    imagesData.append(data)
+                }
+            }
+            
+        }
+        
+        DBManager.shared.addImages(imagesData: imagesData)
     }
     
 }

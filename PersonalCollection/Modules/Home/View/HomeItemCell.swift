@@ -20,7 +20,7 @@ class HomeItemCell: UICollectionViewCell {
         let view = UIImageView()
         view.clipsToBounds = true
         view.image = UIImage(named: "backgroundImage")
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleAspectFill
         return view
     }()
     

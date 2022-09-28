@@ -14,7 +14,6 @@ class UserManager : Mappable {
     var userName: String = ""
     var gender: String = ""
     var dateOfBirth: String = ""
-    var userID: String = ""
     
     static let shared = UserManager()
     
@@ -34,7 +33,7 @@ class UserManager : Mappable {
     func deleteUser() {
         
         let router = RootRouter()
-        userID = ""
+        
         userName = ""
         gender = ""
         dateOfBirth = ""
@@ -60,12 +59,11 @@ class UserManager : Mappable {
     }
     
     func isLoggedIn() -> Bool {
-        return userID.count > 0
+        return userName.count > 0
     }
     
     
     func mapping(map: Map) {
-        userID <- map["userID"]
         userName <- map["userName"]
         gender <- map["gender"]
         dateOfBirth <- map["dateOfBirth"]

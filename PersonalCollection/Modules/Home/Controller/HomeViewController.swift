@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     let homeView: HomeView = HomeView(frame: UIScreen.main.bounds)
     var images: [UIImage] = [] {
         didSet {
+            saveImages()
             homeView.collectionView.reloadData()
         }
     }
@@ -37,10 +38,43 @@ class HomeViewController: UIViewController {
     }
     
     func configureUI() {
-        self.navigationItem.title = "My Collection"
+        
         self.view = homeView
         homeView.collectionView.dataSource = self
         homeView.collectionView.delegate = self
+        
+        
+        loadSavedImages()
+    }
+    
+    func loadSavedImages() {
+        if let imagesData = DBManager.shared.fetchImagesData() {
+            
+            imagesData.forEach { data in
+                if let image = UIImage(data: data) {
+                    self.images.append(image)
+                    
+                }
+            }
+            
+        }
+    }
+    
+    func saveImages() {
+        
+        var imagesData: [Data] = []
+        
+        if images.count > 0 {
+            
+            images.forEach { image in
+                if let data = image.jpegData(compressionQuality: 0.5) {
+                    imagesData.append(data)
+                }
+            }
+            
+        }
+        
+        DBManager.shared.addImages(imagesData: imagesData)
     }
     
     func configureNavigationBar() {
@@ -51,6 +85,7 @@ class HomeViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem = rightBarButton
         self.navigationItem.rightBarButtonItem = addMoreImageButton
+       
     }
     
    
@@ -67,9 +102,7 @@ class HomeViewController: UIViewController {
     @objc
     func didTapLogOut(_ sender: UIBarButtonItem) {
         
-        let allUser = DBManager.shared.fetchAllUsers()
-        
-        print("Users: \(allUser)")
+        UserManager.shared.deleteUser()
         
     }
 }

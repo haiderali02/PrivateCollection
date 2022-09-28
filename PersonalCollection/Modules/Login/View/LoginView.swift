@@ -59,7 +59,7 @@ class LoginView: UIView {
         let view = UIStackView()
         view.axis = .vertical
         view.distribution = .fill
-        view.spacing = 16
+        view.spacing = 20
         return view
     }()
     
@@ -75,7 +75,7 @@ class LoginView: UIView {
     
     var signupButton: LoadingButton = {
         let button = LoadingButton()
-        button.setTitle("CRETAE A NEW ACCOUNT", for: .normal)
+        button.setTitle("Create a new account", for: .normal)
         button.backgroundColor = .clear
         button.setTitleColor(.systemBlue, for: .normal)
         button.layer.cornerRadius = 8

@@ -14,7 +14,7 @@ class SignupView: UIView {
     var registerLabbel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 28, weight: .bold)
-        label.text = "Register"
+        label.text = "Join Us!"
         label.textColor = .black
         return label
     }()
@@ -52,6 +52,7 @@ class SignupView: UIView {
         field.inputField.isHidden = true
         field.dropDownField.isHidden = false
         field.dropDownField.itemList = ["Male", "Female", "Other"]
+        field.dropDownField.placeholder = "Gender"
         return field
     }()
     
@@ -60,6 +61,7 @@ class SignupView: UIView {
         field.fieldTitleLabel.text = "Select your date of birth"
         field.inputField.isHidden = true
         field.dropDownField.isHidden = false
+        field.dropDownField.placeholder = "Date of birth"
         field.dropDownField.dropDownMode = .date
         field.dropDownField.datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date()) // Minimum age should be 10 year old
         return field
@@ -77,7 +79,7 @@ class SignupView: UIView {
         let view = UIStackView()
         view.axis = .vertical
         view.distribution = .fill
-        view.spacing = 16
+        view.spacing = 20
         return view
     }()
     

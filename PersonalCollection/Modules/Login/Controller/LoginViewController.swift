@@ -25,10 +25,20 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if UserManager.shared.isLoggedIn() {
+            navigateToHome()
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func navigateToHome() {
+        let vc = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - METHODS -
@@ -52,8 +62,7 @@ class LoginViewController: UIViewController {
             DBManager.shared.loginUser(username: userName, password: password) { success, error in
                 
                 if error == nil {
-                    let vc = HomeViewController()
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.navigateToHome()
                 } else {
                     self.showAlert(title: "Alert", message: error ?? "")
                 }

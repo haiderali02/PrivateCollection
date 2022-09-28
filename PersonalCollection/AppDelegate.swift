@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        
+        UserManager.shared.loadUser()
+        
         // Keyboard Manager
         IQKeyboardManager.shared.enable = true
         

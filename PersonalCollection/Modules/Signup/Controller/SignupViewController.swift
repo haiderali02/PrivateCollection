@@ -49,6 +49,7 @@ class SignupViewController: UIViewController {
     
     @objc
     func didTapSignup(_ sender: LoadingButton) {
-        //
+        let vc = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

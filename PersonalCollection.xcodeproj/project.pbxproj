@@ -19,6 +19,8 @@
 		1865955828E44A7900648C54 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865955628E44A7900648C54 /* UITextFieldExtension.swift */; };
 		1865955928E44A7900648C54 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865955728E44A7900648C54 /* ViewExtension.swift */; };
 		1865955B28E44DD500648C54 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865955A28E44DD500648C54 /* LoadingButton.swift */; };
+		188749BA28E4AB3400624F91 /* HomeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188749B928E4AB3400624F91 /* HomeItemCell.swift */; };
+		188749BC28E4C32200624F91 /* HomeItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188749BB28E4C32200624F91 /* HomeItemProtocol.swift */; };
 		2A1DD4DF1F389C2200712195 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */; };
 		2A1DD4E11F389E2100712195 /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */; };
 		2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E77361F384BFC006C84D4 /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		1865955628E44A7900648C54 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1865955728E44A7900648C54 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		1865955A28E44DD500648C54 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		188749B928E4AB3400624F91 /* HomeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCell.swift; sourceTree = "<group>"; };
+		188749BB28E4C32200624F91 /* HomeItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemProtocol.swift; sourceTree = "<group>"; };
 		2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
 		2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHandler.swift; sourceTree = "<group>"; };
 		2A1E77331F384BFC006C84D4 /* PersonalCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				1865954F28E43EEB00648C54 /* HomeView.swift */,
+				188749B928E4AB3400624F91 /* HomeItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 		2AB31DA21F38744600B7D1F3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				188749BB28E4C32200624F91 /* HomeItemProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				1865955B28E44DD500648C54 /* LoadingButton.swift in Sources */,
 				1865954628E43DE900648C54 /* LoginViewController.swift in Sources */,
 				1865955828E44A7900648C54 /* UITextFieldExtension.swift in Sources */,
+				188749BC28E4C32200624F91 /* HomeItemProtocol.swift in Sources */,
 				2A9222821F38797600A648E6 /* ConfigurationManager.swift in Sources */,
 				2ABEE6D61F3886D700531205 /* RootRouter.swift in Sources */,
 				1865955028E43EEB00648C54 /* HomeView.swift in Sources */,
@@ -617,6 +624,7 @@
 				1865954328E43D9F00648C54 /* LoginView.swift in Sources */,
 				1865955928E44A7900648C54 /* ViewExtension.swift in Sources */,
 				1865953D28E43AF000648C54 /* UserManager.swift in Sources */,
+				188749BA28E4AB3400624F91 /* HomeItemCell.swift in Sources */,
 				1865954A28E43E7200648C54 /* SignupView.swift in Sources */,
 				2A1DD4DF1F389C2200712195 /* DeeplinkHandler.swift in Sources */,
 			);
@@ -772,11 +780,12 @@
 			baseConfigurationReference = F4C8C5ED5346BDB983B6A132 /* Pods-PersonalCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4FS2HJM6H3;
 				INFOPLIST_FILE = PersonalCollection/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xfrontend -warn-long-expression-type-checking=500";
-				PRODUCT_BUNDLE_IDENTIFIER = your.bundle.id;
+				PRODUCT_BUNDLE_IDENTIFIER = com.privatecollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -788,11 +797,12 @@
 			baseConfigurationReference = E198AC36DA53E06BD73ADD2F /* Pods-PersonalCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4FS2HJM6H3;
 				INFOPLIST_FILE = PersonalCollection/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = your.bundle.id;
+				PRODUCT_BUNDLE_IDENTIFIER = com.privatecollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -902,11 +912,12 @@
 			baseConfigurationReference = 4ED738D2E51C2B553A82E2CF /* Pods-PersonalCollection.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4FS2HJM6H3;
 				INFOPLIST_FILE = PersonalCollection/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = your.bundle.id;
+				PRODUCT_BUNDLE_IDENTIFIER = com.privatecollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

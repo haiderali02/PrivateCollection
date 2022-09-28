@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+typealias CollectionViewDelegateAndDataSource = UICollectionViewDelegate & UICollectionViewDelegateFlowLayout & UICollectionViewDataSource
 
 struct Constant {
     

@@ -42,7 +42,8 @@ class LoginViewController: UIViewController {
     // MARK: - ACTIONS -
     @objc
     func didTapLogin(_ sender: LoadingButton) {
-        //
+        let vc = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc

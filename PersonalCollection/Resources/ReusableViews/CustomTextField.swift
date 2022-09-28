@@ -66,7 +66,7 @@ class CustomTextField: UIView {
         button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
         button.isSelected = true
         button.isHidden = true
-        button.tintColor = .darkGray
+        button.tintColor = .black
         return button
     }()
     

@@ -49,7 +49,31 @@ class SignupViewController: UIViewController {
     
     @objc
     func didTapSignup(_ sender: LoadingButton) {
-        let vc = HomeViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        guard let userName = signupView.userNameField.inputField.text,
+              let password = signupView.passwordField.inputField.text,
+              let gender = signupView.genderField.dropDownField.selectedItem,
+              let dob = signupView.dateOfBirthField.dropDownField.selectedItem
+        else {
+            return
+        }
+        
+        if userName.count < 2 {
+            self.showAlert(title: "Alert", message: "Username should contain minimum 2 characters")
+            return
+        } else if password.count < 5 {
+            self.showAlert(title: "Alert", message: "Password should contain minimum 6 characters")
+            return
+        } else {
+            DBManager.shared.createNewUser(userName: userName, userPassword: password, userDOB: dob, userGender: gender) { success, error in
+                if error == nil {
+                    let vc = HomeViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    self.showAlert(title: "Alert", message: error ?? "")
+                }
+                
+            }
+        }
     }
 }

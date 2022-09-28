@@ -42,8 +42,25 @@ class LoginViewController: UIViewController {
     // MARK: - ACTIONS -
     @objc
     func didTapLogin(_ sender: LoadingButton) {
-        let vc = HomeViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        guard let userName = loginView.userNameField.inputField.text,
+              let password = loginView.passwordField.inputField.text else {
+            return
+        }
+        
+        if userName.count > 0 && password.count > 0 {
+            DBManager.shared.loginUser(username: userName, password: password) { success, error in
+                
+                if error == nil {
+                    let vc = HomeViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    self.showAlert(title: "Alert", message: error ?? "")
+                }
+                
+            }
+            
+        }
     }
     
     @objc

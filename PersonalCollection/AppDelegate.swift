@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import CoreData
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -47,5 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // To enable full remote notifications functionality you should first register the device with your api service
         //https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/
         notificationsHandler.handleRemoteNotification(with: userInfo)
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        DBManager.shared.saveContext()
     }
 }

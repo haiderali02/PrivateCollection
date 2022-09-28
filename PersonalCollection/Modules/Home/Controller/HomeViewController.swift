@@ -67,6 +67,10 @@ class HomeViewController: UIViewController {
     @objc
     func didTapLogOut(_ sender: UIBarButtonItem) {
         
+        let allUser = DBManager.shared.fetchAllUsers()
+        
+        print("Users: \(allUser)")
+        
     }
 }
 

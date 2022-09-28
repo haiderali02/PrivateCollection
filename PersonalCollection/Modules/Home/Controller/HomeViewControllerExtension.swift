@@ -30,23 +30,6 @@ extension HomeViewController: CollectionViewDelegateAndDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return homeView.collectionView.frame.size
     }
-    
-    // Infinit Scrolling will start work when images count > 2
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageFloat = (scrollView.contentOffset.x / scrollView.frame.size.width)
-        let pageInt = Int(round(pageFloat))
-        if images.count > 2 {
-            switch pageInt {
-            case 0:
-                 self.homeView.collectionView.scrollToItem(at: [0, 2], at: .left, animated: false)
-            case images.count - 1:
-                self.homeView.collectionView.scrollToItem(at: [0, 1], at: .left, animated: false)
-            default:
-                break
-            }
-        }
-    }
 }
 
 extension HomeViewController {
